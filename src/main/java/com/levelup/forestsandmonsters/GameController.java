@@ -5,7 +5,7 @@ import java.awt.Point;
 public class GameController {
     // TODO: If your stakeholder wants to call this CHARACTER, change var name for
     // low representational gap
-    static final String DEFAULT_CHARACTER_NAME = "Character";
+    static final String DEFAULT_CHARACTER_NAME = "Super7";
 
     GameCharacter gameCharacter = null;
     public class GameStatus {
@@ -18,6 +18,7 @@ public class GameController {
 
     public GameController() {
         status = new GameStatus();
+        this.gameCharacter = new GameCharacter();
     }
 
     // TODO: Ensure this AND CLI commands match domain model
@@ -48,6 +49,10 @@ public class GameController {
     public void move(DIRECTION directionToMove) {
         // TODO: Implement move - should call something on another class
         // TODO: Should probably also update the game results
+
+        gameCharacter.move(directionToMove);
+        Point endPoistion = gameCharacter.getPosition();
+        this.status.currentPosition = endPoistion;      
     }
 
     public void setCharacterPosition(Point point) {
