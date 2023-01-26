@@ -7,6 +7,7 @@ public class GameController {
     // low representational gap
     static final String DEFAULT_CHARACTER_NAME = "Character";
 
+    GameCharacter gameCharacter = null;
     public class GameStatus {
         // TODO: Add other status data
         public String characterName = DEFAULT_CHARACTER_NAME;
@@ -50,6 +51,15 @@ public class GameController {
     }
 
     public void setCharacterPosition(Point point) {
+        this.gameCharacter.setPosition(point);
+    }
+
+    public GameCharacter getGameCharacter() {
+        return this.gameCharacter;
+    }
+
+    public void setGameCharacter(GameCharacter gameCharacter ) {
+        this.gameCharacter = gameCharacter;
     }
 
 }
