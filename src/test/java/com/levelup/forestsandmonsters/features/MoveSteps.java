@@ -43,7 +43,7 @@ public void theCharacterMoves() {
     gc.setCharacterPosition (new Point(this.startX,this.startY));
     gc.move(this.direction);
     GameController.GameStatus status = gc.getStatus();
-    this.currentPosition = status.currentPosition;
+    this.currentPosition = status.getCurrentPosition();
     //throw new io.cucumber.java.PendingException();
 }
 

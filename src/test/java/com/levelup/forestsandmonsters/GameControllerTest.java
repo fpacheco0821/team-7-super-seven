@@ -49,8 +49,8 @@ public class GameControllerTest {
         assertEquals(endPosition.x,testObj.getGameCharacter().getPosition().x);
         assertEquals(endPosition.y,testObj.getGameCharacter().getPosition().y);
 
-        assertEquals(endPosition.x,testObj.getStatus().currentPosition.x);
-        assertEquals(endPosition.y,testObj.getStatus().currentPosition.y);
+        assertEquals(endPosition.x,testObj.getStatus().getCurrentPosition().x);
+        assertEquals(endPosition.y,testObj.getStatus().getCurrentPosition().y);
         assertEquals("Super7",testObj.getStatus().characterName);
   
 
@@ -131,8 +131,8 @@ public class GameControllerTest {
         assertEquals(endPosition.x,testObj.getGameCharacter().getPosition().x);
         assertEquals(endPosition.y,testObj.getGameCharacter().getPosition().y);
 
-        assertEquals(endPosition.x,testObj.getStatus().currentPosition.x);
-        assertEquals(endPosition.y,testObj.getStatus().currentPosition.y);
+        assertEquals(endPosition.x,testObj.getStatus().getCurrentPosition().x);
+        assertEquals(endPosition.y,testObj.getStatus().getCurrentPosition().y);
         assertEquals("Super7",testObj.getStatus().characterName);
   
 
@@ -163,8 +163,8 @@ public class GameControllerTest {
         assertEquals(expectedPosition.x,currentPosition.x);
         assertEquals(expectedPosition.y,currentPosition.y);    
 
-        assertEquals(expectedPosition.x,testObj.getStatus().currentPosition.x);
-        assertEquals(expectedPosition.y,testObj.getStatus().currentPosition.y);        
+        assertEquals(expectedPosition.x,testObj.getStatus().getCurrentPosition().x);
+        assertEquals(expectedPosition.y,testObj.getStatus().getCurrentPosition().y);        
         
         
     }

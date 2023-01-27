@@ -14,7 +14,9 @@ public class GameController {
     public class GameStatus {
         // TODO: Add other status data
         public String characterName = DEFAULT_CHARACTER_NAME;
-        public Point currentPosition = null;
+        public Point getCurrentPosition() {
+            return gameCharacter.getPosition();
+        }
     }
 
     GameStatus status;
@@ -43,9 +45,7 @@ public class GameController {
     public void startGame() {
         this.gameMap = new GameMap();
         this.gameMap.init();    
-        this.gameCharacter.enterMap(STARTING_POSITION); 
-        this.status.currentPosition = STARTING_POSITION;   
-
+        this.gameCharacter.enterMap(STARTING_POSITION);   
     }
 
     public GameStatus getStatus() {
@@ -57,8 +57,7 @@ public class GameController {
         // TODO: Should probably also update the game results
 
         gameCharacter.move(directionToMove);
-        Point endPoistion = gameCharacter.getPosition();
-        this.status.currentPosition = endPoistion;      
+        Point endPoistion = gameCharacter.getPosition();     
     }
 
     public void setCharacterPosition(Point point) {
