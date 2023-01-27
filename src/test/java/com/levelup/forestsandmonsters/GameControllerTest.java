@@ -1,7 +1,7 @@
 package com.levelup.forestsandmonsters;
 
 import static org.junit.Assert.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.Test;
 
@@ -137,6 +137,37 @@ public class GameControllerTest {
   
 
     } 
+
+    @Test
+    public void testIniializeMap() {
+        GameController testObj = new GameController();
+        testObj.startGame();
+
+        GameMap gm = testObj.getMap();
+
+        assertNotNull(gm);
+        assertNotNull(gm.getMapPositions());
+        assertEquals(gm.getMapPositions().length, 10);
+
+    }
+
+    @Test
+    public void testEnterMap(){
+        GameController testObj = new GameController();
+        testObj.startGame();
+
+        Point expectedPosition = new Point(5,5);
+
+        Point currentPosition = testObj.getGameCharacter().getPosition();
+
+        assertEquals(expectedPosition.x,currentPosition.x);
+        assertEquals(expectedPosition.y,currentPosition.y);    
+
+        assertEquals(expectedPosition.x,testObj.getStatus().currentPosition.x);
+        assertEquals(expectedPosition.y,testObj.getStatus().currentPosition.y);        
+        
+        
+    }
     
 
 }

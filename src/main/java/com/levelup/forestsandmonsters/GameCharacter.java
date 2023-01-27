@@ -15,6 +15,10 @@ public class GameCharacter {
         return this.position;
     }
 
+    public void enterMap(Point pos){
+        this.position = pos;
+    }
+
     public void setPosition(Point position){
         this.position = position;
     }

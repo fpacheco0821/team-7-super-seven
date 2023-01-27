@@ -2,12 +2,15 @@ package com.levelup.forestsandmonsters;
 
 import java.awt.Point;
 
+
 public class GameController {
     // TODO: If your stakeholder wants to call this CHARACTER, change var name for
     // low representational gap
     static final String DEFAULT_CHARACTER_NAME = "Super7";
+    static final Point STARTING_POSITION = new Point(5,5);
 
     GameCharacter gameCharacter = null;
+    GameMap gameMap = null;
     public class GameStatus {
         // TODO: Add other status data
         public String characterName = DEFAULT_CHARACTER_NAME;
@@ -19,6 +22,7 @@ public class GameController {
     public GameController() {
         status = new GameStatus();
         this.gameCharacter = new GameCharacter();
+
     }
 
     // TODO: Ensure this AND CLI commands match domain model
@@ -37,9 +41,11 @@ public class GameController {
     }
 
     public void startGame() {
-        // TODO: Implement startGame - Should probably create tiles and put the character
-        // on them?
-        // TODO: Should also update the game results?
+        this.gameMap = new GameMap();
+        this.gameMap.init();    
+        this.gameCharacter.enterMap(STARTING_POSITION); 
+        this.status.currentPosition = STARTING_POSITION;   
+
     }
 
     public GameStatus getStatus() {
@@ -65,6 +71,10 @@ public class GameController {
 
     public void setGameCharacter(GameCharacter gameCharacter ) {
         this.gameCharacter = gameCharacter;
+    }
+
+    public GameMap getMap() {
+        return this.gameMap;
     }
 
 }
